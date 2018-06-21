@@ -9,7 +9,7 @@
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
 
-    <link rel="import" href="../stripe-elements.html">
+    <script type="module" src="../stripe-elements.js"></script>
   </head>
   <body>
     <test-fixture id="basic">
@@ -22,9 +22,12 @@
       suite('stripe-elements', function() {
         test('instantiating the element works', function() {
           var element = fixture('basic');
-          assert.equal(element.is, 'stripe-elements');
-        });
-      });
-    </script>
-  </body>
-</html>
+    <script type="module">
+import '../stripe-elements.js';
+suite('stripe-elements', function() {
+  test('instantiating the element works', function() {
+    var element = fixture('basic');
+    assert.equal(element.is, 'stripe-elements');
+  });
+});
+</script>

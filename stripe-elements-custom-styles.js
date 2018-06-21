@@ -1,6 +1,7 @@
-<link rel="import" href="../polymer/lib/elements/custom-style.html">
+const $_documentContainer = document.createElement('template');
+$_documentContainer.setAttribute('style', 'display: none;');
 
-<custom-style>
+$_documentContainer.innerHTML = `<custom-style>
   <style id="stripe-styles" is="custom-style">
   .StripeElement {
     background-color: white;
@@ -29,4 +30,6 @@
     @apply --stripe-elements-element-webkit-autofill;
   }
   </style>
-</custom-style>
+</custom-style>`;
+
+document.head.appendChild($_documentContainer.content);
